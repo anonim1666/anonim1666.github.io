@@ -32,7 +32,7 @@ function renderPosts(posts) {
   postGrid.innerHTML = '';
   posts.forEach(post => {
     const postElement = document.createElement('ion-col');
-    postElement.size = "4";
+    postElement.size = "2";
     postElement.innerHTML = `
       <ion-card>
        <img src="${post.img}" alt="${post.title}" />
