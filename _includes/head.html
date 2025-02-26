@@ -10,4 +10,10 @@
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
   {% feed_meta %}
+
+  <script type="module" src="{{ '/assets/frameworks/@ionic/core/dist/ionic/ionic.esm.js?v=8.0' | relative_url }}"></script>
+  <script nomodule src="{{ '/assets/frameworks/@ionic/core/dist/ionic/ionic.js?v=8.0' | relative_url }}"></script>
+  <link rel="stylesheet" href="{{ '/assets/frameworks/@ionic/core/css/ionic.bundle.css?v=8.0' | relative_url }}" />
+        <script type="module" src="{{ '/assets/frameworks/ionicons/dist/ionicons/ionicons.esm.js' | relative_url }}"></script>
+        <script nomodule src="{{ '/assets/frameworks/ionicons/dist/ionicons/ionicons.js' | relative_url }}"></script>
 </head>
