@@ -1,20 +1,20 @@
 [
   {
-    "title": "Post 1",
-    "img": "",
-    "content": "Content for post 1",
-    "url": ""
+    "title": "Gates Of Olympus",
+    "img": "/assets/img/Gates-Of-Olympus.jpeg",
+    "content": "Demo Game",
+    "url": "https://d3pvfi6m7bxu71.cloudfront.net/gs2c/openGame.do?gameSymbol=vs20olympgate&websiteUrl=https%3A%2F%2Fdemogamesfree.pragmaticplay.net&jurisdiction=99&lobby_url=https%3A%2F%2Fwww.pragmaticplay.com%2Fen%2F&lang=ID&cur=IDR"
   },
   {
-    "title": "Post 2",
-    "img": "",
-    "content": "Content for post 2",
-    "url": ""
+    "title": "Gates Of Olympus 1000",
+    "img": "/assets/img/olympus1000.jpeg",
+    "content": "Demo Game",
+    "url": "https://d3pvfi6m7bxu71.cloudfront.net/gs2c/openGame.do?gameSymbol=vs20olympx&websiteUrl=https%3A%2F%2Fdemogamesfree.pragmaticplay.net&jurisdiction=99&lobby_url=https%3A%2F%2Fwww.pragmaticplay.com%2Fen%2F&lang=ID&cur=IDR"
   },
   {
-    "title": "Post 3",
-    "img": "",
-    "content": "Content for post 3",
-    "url": ""
+    "title": "Starlight Princes",
+    "img": "/assets/img/Starlight-Princess.jpeg",
+    "content": "Demo Game",
+    "url": "https://d3pvfi6m7bxu71.cloudfront.net/gs2c/openGame.do?gameSymbol=vs20starlight&websiteUrl=https%3A%2F%2Fdemogamesfree.pragmaticplay.net&jurisdiction=99&lobby_url=https%3A%2F%2Fwww.pragmaticplay.com%2Fen%2F&lang=ID&cur=IDR"
   }
 ]
