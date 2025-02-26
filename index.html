@@ -34,6 +34,7 @@ function renderPosts(posts) {
     const postElement = document.createElement('ion-col');
     postElement.size = "6";
     postElement.innerHTML = `
+<a href="${post.url}">
       <ion-card>
        <img class="img-fit" src="${post.img}" alt="${post.title}" />
         <ion-card-header>
@@ -43,6 +44,7 @@ function renderPosts(posts) {
           ${post.content}
         </ion-card-content>
       </ion-card>
+</a>
     `;
     postGrid.appendChild(postElement);
   });
