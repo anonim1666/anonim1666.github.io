@@ -16,4 +16,33 @@
   <link rel="stylesheet" href="{{ '/assets/frameworks/@ionic/core/css/ionic.bundle.css?v=8.0' | relative_url }}" />
         <script type="module" src="{{ '/assets/frameworks/ionicons/dist/ionicons/ionicons.esm.js' | relative_url }}"></script>
         <script nomodule src="{{ '/assets/frameworks/ionicons/dist/ionicons/ionicons.js' | relative_url }}"></script>
+<style>
+#preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#loader {
+  text-align: center;
+}
+
+#logo {
+  width: 100px;
+  height: 100px;
+}
+
+#loading-text {
+  margin-top: 20px;
+  font-size: 20px;
+}
+</style>
 </head>
