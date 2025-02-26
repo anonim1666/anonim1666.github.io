@@ -18,51 +18,64 @@ a { text-decoration: none; }
         </ion-row>
       </ion-grid>
 
-      <script>
-const refresher = document.getElementById('refresher');
-const postGrid = document.getElementById('post-grid');
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      let percentage = 0;
+      const loadingText = document.getElementById('loading-percentage');
+      const preloader = document.getElementById('preloader');
 
-async function fetchPosts() {
-  try {
-    const response = await fetch('assets/data/json/slot.json');
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+      const interval = setInterval(() => {
+        percentage += 1;
+        loadingText.textContent = `${percentage}%`;
+        if (percentage >= 100) {
+          clearInterval(interval);
+          preloader.style.display = 'none';
+        }
+      }, 50); // Adjust the interval time as needed
+    });
+
+    const refresher = document.getElementById('refresher');
+    const postGrid = document.getElementById('post-grid');
+
+    async function fetchPosts() {
+      try {
+        const response = await fetch('assets/data/json/slot.json');
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const posts = await response.json();
+        renderPosts(posts);
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+      }
     }
-    const posts = await response.json();
-    renderPosts(posts);
-  } catch (error) {
-    console.error('Error fetching posts:', error);
-  }
-}
 
-function renderPosts(posts) {
-  postGrid.innerHTML = '';
-  posts.forEach(post => {
-    const postElement = document.createElement('ion-col');
-    postElement.size = "6";
-    postElement.innerHTML = `
-<a href="${post.url}">
-      <ion-card>
-       <img class="img-fit" src="${post.img}" alt="${post.title}" />
-        <ion-card-header>
-          <ion-card-title>${post.title}</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          ${post.content}
-        </ion-card-content>
-      </ion-card>
-</a>
-    `;
-    postGrid.appendChild(postElement);
-  });
-}
+    function renderPosts(posts) {
+      postGrid.innerHTML = '';
+      posts.forEach(post => {
+        const postElement = document.createElement('ion-col');
+        postElement.size = "6";
+        postElement.innerHTML = `
+          <a href="${post.url}">
+            <ion-card>
+              <img class="img-fit" src="${post.img}" alt="${post.title}" />
+              <ion-card-header>
+                <ion-card-title>${post.title}</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                ${post.content}
+              </ion-card-content>
+            </ion-card>
+          </a>
+        `;
+        postGrid.appendChild(postElement);
+      });
+    }
 
-// Event refresher untuk reload data
-refresher.addEventListener('ionRefresh', async () => {
-  await fetchPosts();
-  refresher.complete();
-});
+    refresher.addEventListener('ionRefresh', async () => {
+      await fetchPosts();
+      refresher.complete();
+    });
 
-// Panggil saat halaman dimuat
-fetchPosts();
-      </script>
+    fetchPosts();
+</script>
