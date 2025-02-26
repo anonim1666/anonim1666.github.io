@@ -8,3 +8,14 @@ layout: default
   <p>Pull this content down to trigger the refresh.</p>
 
 <h1>Hello world!</h1>
+
+<script>
+  const refresher = document.getElementById('refresher');
+
+  refresher.addEventListener('ionRefresh', () => {
+    setTimeout(() => {
+      // Any calls to load data go here
+      refresher.complete();
+    }, 2000);
+  });
+</script>
