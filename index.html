@@ -19,21 +19,6 @@ a { text-decoration: none; }
       </ion-grid>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      let percentage = 0;
-      const loadingText = document.getElementById('loading-percentage');
-      const preloader = document.getElementById('preloader');
-
-      const interval = setInterval(() => {
-        percentage += 1;
-        loadingText.textContent = `${percentage}%`;
-        if (percentage >= 100) {
-          clearInterval(interval);
-          preloader.style.display = 'none';
-        }
-      }, 50); // Adjust the interval time as needed
-    });
-
     const refresher = document.getElementById('refresher');
     const postGrid = document.getElementById('post-grid');
 
