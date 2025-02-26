@@ -1,0 +1,3 @@
+@use 'variables' as *;
+@mixin respond($breakpoint) { @media (max-width: map-get($breakpoints, $breakpoint)) { @content; } }
+@mixin button($bg-color) { background: $bg-color; color: white; padding: 10px 15px; border: none; cursor: pointer; &:hover { opacity: 0.8; } }

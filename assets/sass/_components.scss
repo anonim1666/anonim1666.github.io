@@ -1,0 +1,5 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+.button-primary { @include button($primary-color); }
+.button-secondary { @include button($secondary-color); }
+.card { background: white; padding: 20px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); border-radius: 5px; }
