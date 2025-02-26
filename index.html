@@ -35,6 +35,7 @@ function renderPosts(posts) {
     postElement.size = "4";
     postElement.innerHTML = `
       <ion-card>
+       <img src="${post.img}" alt="${post.title}" />
         <ion-card-header>
           <ion-card-title>${post.title}</ion-card-title>
         </ion-card-header>
