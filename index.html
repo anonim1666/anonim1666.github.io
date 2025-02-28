@@ -59,7 +59,7 @@ a { text-decoration: none; }
 
       // Render the remaining posts as a list
       posts.slice(4).forEach(post => {
-        const postElement = document.createElement('ion-row', 'ion-item');
+        const postElement = document.createElement('ion-list', 'ion-item');
         postElement.innerHTML = `
           <ion-thumbnail slot="start">
             <img src="${post.img}" alt="${post.title}" />
