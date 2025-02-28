@@ -41,7 +41,9 @@ a { text-decoration: none; }
       posts.slice(0, 4).forEach(post => {
         const postElement = document.createElement('div');
         postElement.innerHTML = `
-<ion-col size="6" size-md="4" size-lg="2">
+<ion-grid>
+  <ion-row>
+    <ion-col size="6" size-md="4" size-lg="2">
           <a href="${post.url}">
             <ion-card>
               <img class="img-fit" src="${post.img}" alt="${post.title}" />
@@ -53,7 +55,9 @@ a { text-decoration: none; }
               </ion-card-content>
             </ion-card>
           </a>
-</ion-col>
+     </ion-col>
+   </ion-row>
+</ion-grid>
         `;
         postGrid.appendChild(postElement);
       });
