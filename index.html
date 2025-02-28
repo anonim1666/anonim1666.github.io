@@ -17,7 +17,6 @@ a { text-decoration: none; }
           <!-- Posts will be inserted here -->
         </ion-row>
       </ion-grid>
-
 <script>
     const refresher = document.getElementById('refresher');
     const postGrid = document.getElementById('post-grid');
@@ -37,7 +36,9 @@ a { text-decoration: none; }
 
     function renderPosts(posts) {
       postGrid.innerHTML = '';
-      posts.forEach(post => {
+
+      // Render the first 4 posts as a grid
+      posts.slice(0, 4).forEach(post => {
         const postElement = document.createElement('ion-col');
         postElement.size = "6";
         postElement.innerHTML = `
@@ -52,6 +53,21 @@ a { text-decoration: none; }
               </ion-card-content>
             </ion-card>
           </a>
+        `;
+        postGrid.appendChild(postElement);
+      });
+
+      // Render the remaining posts as a list
+      posts.slice(4).forEach(post => {
+        const postElement = document.createElement('ion-item');
+        postElement.innerHTML = `
+          <ion-thumbnail slot="start">
+            <img src="${post.img}" alt="${post.title}" />
+          </ion-thumbnail>
+          <ion-label>
+            <h2>${post.title}</h2>
+            <p>${post.content}</p>
+          </ion-label>
         `;
         postGrid.appendChild(postElement);
       });
