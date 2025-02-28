@@ -40,9 +40,8 @@ a { text-decoration: none; }
       // Render the first 4 posts as a grid
       posts.slice(0, 4).forEach(post => {
         const postElement = document.createElement('div');
-        postElement.size = "6";
         postElement.innerHTML = `
-<ion-col>
+<ion-col size="6" size-md="4" size-lg="2">
           <a href="${post.url}">
             <ion-card>
               <img class="img-fit" src="${post.img}" alt="${post.title}" />
