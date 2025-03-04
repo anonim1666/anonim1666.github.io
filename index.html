@@ -44,8 +44,7 @@ ion-thumbnail {
         const postElement = document.createElement('ion-grid');
         postElement.innerHTML = `
     <ion-col size="6" size-md="4" size-lg="2">
-          <a href="${post.url}">
-            <ion-card>
+            <ion-card onClick="handleCardClick('${post.url}')">
               <img class="img-fit" src="${post.img}" alt="${post.title}" />
               <ion-card-header>
                 <ion-card-title>${post.title}</ion-card-title>
@@ -54,7 +53,6 @@ ion-thumbnail {
                 ${post.content}
               </ion-card-content>
             </ion-card>
-          </a>
      </ion-col>
         `;
         postGrid.appendChild(postElement);
