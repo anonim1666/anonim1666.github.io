@@ -1,7 +1,4 @@
 @use 'sass/index';
 .img-fit { width: 220px; object-fit: content; background-size: cover; background-position: center; }
 a { text-decoration: none; }
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(220px, 1fr));
-    gap: 0px; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(220px, 1fr)); gap: 0px; }
