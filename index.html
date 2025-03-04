@@ -62,7 +62,7 @@ ion-thumbnail {
       posts.slice(4).forEach(post => {
         const postElement = document.createElement('ion-list');
         postElement.innerHTML = `
-  <ion-item>
+  <ion-item onClick="handleCardClick('${post.url}')">
           <ion-thumbnail slot="start">
             <img src="${post.img}" alt="${post.title}" />
           </ion-thumbnail>
