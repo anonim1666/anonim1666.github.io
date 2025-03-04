@@ -1,5 +1,4 @@
 @use './sass/index';
 .img-fit { width: 100%; object-fit: content; background-size: cover; background-position: center; }
 a { text-decoration: none; }
-.grid { display: grid;
-        grid-template-columns:  }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0px; }
