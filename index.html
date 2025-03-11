@@ -2,11 +2,8 @@
 layout: default
 ---
 
-<style>
-.img-fit { width: 220px; height: 200px; object-fit: cover; background-size: cover; background-position: center; }
-a { text-decoration: none; }
-#post-grid { text-align:center; width:100%; max-width:900px; }
-.grid { display: grid; grid-template-columns: repeat(2, minmax(210px, 1fr)); gap: 0px; }
+<style type="text/css">
+#post-grid, #post-list { text-align:center; width:100%; max-width:900px; margin:10px auto 0px; }
 ion-thumbnail {
     --border-radius: 14px;
   }
@@ -16,6 +13,9 @@ ion-thumbnail {
         <ion-refresher-content></ion-refresher-content>
       </ion-refresher>
 
+		<div id="post-list" class="grid">
+          <!-- Posts will be inserted here -->
+        </div>
         <div id="post-grid">
           <!-- Posts will be inserted here -->
         </div>
@@ -23,6 +23,7 @@ ion-thumbnail {
 <script>
     const refresher = document.getElementById('refresher');
     const postGrid = document.getElementById('post-grid');
+    const postList = document.getElementById('post-list');
 
     async function fetchPosts() {
       try {
@@ -42,22 +43,19 @@ ion-thumbnail {
 
       // Render the first 4 posts as a grid
       posts.slice(0, 4).forEach(post => {
-        const postElement = document.createElement('div');
+        const postElement = document.createElement('ion-card');
         postElement.innerHTML = `
-<ion-grid class="grid">
-
-            <ion-card onClick="handleCardClick('${post.url}')">
-              <img class="img-fit" src="${post.img}" alt="${post.title}" />
+            <ion-link onClick='handleCardClick("${post.url}")'>
+              <img class='img-fit' src='${post.img}' alt='${post.title}' />
               <ion-card-header>
                 <ion-card-title>${post.title}</ion-card-title>
               </ion-card-header>
               <ion-card-content>
                 ${post.content}
               </ion-card-content>
-            </ion-card>
-</ion-grid>
-        `;
-        postGrid.appendChild(postElement);
+            </ion-link>
+`;
+        postList.appendChild(postElement);
       });
 
       // Render the remaining posts as a list
@@ -66,9 +64,9 @@ ion-thumbnail {
         postElement.innerHTML = `
   <ion-item onClick="handleCardClick('${post.url}')">
           <ion-thumbnail slot="start">
-            <img src="${post.img}" alt="${post.title}" />
+            <img src="${post.img}" class="ml--16" alt="${post.title}" />
           </ion-thumbnail>
-          <ion-label>
+          <ion-label class="pl-10">
             <h2>${post.title}</h2>
             <p>${post.content}</p>
           </ion-label>

@@ -11,7 +11,7 @@ markdown: kramdown
 
 # Sass settings
 sass:
-  sass_dir: assets/sass
+  sass_dir: /assets/sass
   style: :compressed
 
 # Build settings
